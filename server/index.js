@@ -1,7 +1,10 @@
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const bodyParser = require('body-parser')
 const app = express()
+
+const apiRouter = require('./router/api')
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
@@ -21,8 +24,11 @@ async function start () {
     await nuxt.ready()
   }
 
+  app.use('/api', bodyParser.urlencoded({ extended: false }))
+  app.use('/api', apiRouter)
+
   // Give nuxt middleware to express
-  app.use(nuxt.render)
+  // app.use(nuxt.render)
 
   // Listen the server
   app.listen(port, host)
