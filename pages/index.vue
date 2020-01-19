@@ -9,42 +9,39 @@
       <v-spacer />
       <v-flex xs1 ma-3>
         <v-layout row wrap justify-center>
-          <img src="/home.png" height="200px" width="auto"/>
+          <img src="/home.png" height="200px" width="auto" />
         </v-layout>
       </v-flex>
       <v-spacer />
-      <v-form nuxt :to="appRoute">
-        <v-flex xs1 ma-3>
-          <v-layout row wrap justify-center>
-            <v-flex xs4>
-              <v-text-field v-model="username" label="Input Username" filled class="input-field"></v-text-field>
-            </v-flex>
-          </v-layout>
-        </v-flex>
-        <v-flex xs1 ma-3>
-          <v-layout row wrap justify-center>
-            <v-btn color="success" type="submit">Enter</v-btn>
-          </v-layout>
-        </v-flex>
-      </v-form>
+      <v-flex xs1 ma-3>
+        <v-layout row wrap justify-center>
+          <v-flex xs4>
+            <v-text-field v-model="username" label="Input Username" filled class="input-field"></v-text-field>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+      <v-flex xs1 ma-3>
+        <v-layout row wrap justify-center>
+          <v-btn color="success" nuxt :to="appRoute">Enter</v-btn>
+        </v-layout>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-
 export default {
-  data () {
+  data() {
     return {
       username: ''
-    }
+    };
   },
   computed: {
-    appRoute () {
-      return '/app/' + this.username
+    appRoute() {
+      return '/app/' + this.username;
     }
   }
-}
+};
 </script>
 
 <style scoped lang="scss">

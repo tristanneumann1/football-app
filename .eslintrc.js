@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'nuxt/no-cjs-in-config': 'off',
     'semi': ['warn', 'always'],
-    'space-before-function-paren': 0
+    'space-before-function-paren': 0,
+    'max-attributes-per-line': 0
   }
 }

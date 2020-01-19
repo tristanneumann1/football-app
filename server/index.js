@@ -28,7 +28,7 @@ async function start () {
   app.use('/api', apiRouter)
 
   // Give nuxt middleware to express
-  // app.use(nuxt.render)
+  app.use(nuxt.render)
 
   // Listen the server
   app.listen(port, host)

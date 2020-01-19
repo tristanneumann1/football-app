@@ -45,7 +45,7 @@ export default {
         }
       ],
       title: 'Football App'
-    }
+    };
   }
-}
+};
 </script>
